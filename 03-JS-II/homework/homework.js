@@ -21,7 +21,7 @@ function mayoriaDeEdad(edad) {
   if(edad>=18){
     return 'Allowed';
   }else{
-    return 'Not Allowed';
+    return 'Not allowed';
   }
 }
   
@@ -142,14 +142,14 @@ function operadoresLogicos(num1, num2, num3) {
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
   if (num1==0 || num2==0 || num3==0){
-    return 'error';
+    return 'Error';
   }else if(num1<0 || num2<0 || num3<0){
-    return 'Hay Negativos';
+    return 'Hay negativos';
   }else if(num3>num1 && num3>num2){
     num3+=1;
     return num3;
   }else if((num1>num2) && (num1>num3) && (num1>0)){
-    return 'Numero 1 es mayor y positivo';
+    return 'Número 1 es mayor y positivo';
   }else{
     return false;
   }
@@ -162,7 +162,7 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
   if(numero==0 || numero==1){
-    return 'falso';
+    return false;
   }
   var c=0;
   for(i=1; i<=numero; i++){
@@ -172,9 +172,9 @@ function esPrimo(numero) {
     }
   }
   if(c==2){
-    return 'true';
+    return true;
   }else{
-    return 'falso';
+    return false;
   }
   
 }
@@ -194,10 +194,12 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  for(i=1; i<=10; i++){
-    tabla=6*i;
-    console.log('6 * '+i+' = '+tabla);
-  }
+  let tablaDelSeis=[];
+  for(let i=0; i<=10; i++){
+    tablaDelSeis.push(6*i);
+    
+  };
+  return tablaDelSeis;
 }
 
 function tieneTresDigitos(numero){
@@ -217,12 +219,15 @@ function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
-  i = 0;
-do {
-  i+=1;
-  numero+=5;
-  console.log(numero);
-} while (i < 8);
+  count=numero;
+  i=0;
+  do{
+    i++;
+    count=count+5;
+  }
+  while(i<8);
+  return count;
+
 }
 
 

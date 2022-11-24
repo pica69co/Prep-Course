@@ -30,14 +30,11 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  if(array!=''){
-    for(i=0; i<array.length; i++){
-      if(array[i]-Math.floor(array[i])!==0){ 
-        return '"array" debe ser una matriz de enteros'; 
-      }else{array[i]+=1}
-      
-    }console.log(array);
+  newArray=[];
+  for(var i=0; i<array.length; i++ ){
+    newArray[i]=array[i]+1;
   }
+  return newArray;
 }
 
 
@@ -66,10 +63,8 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
- // return palabras.join(' ');
-  newArr=palabras.toString();
-  newArr=newArr.replace(/,/g, " ");
-  console.log(newArr);
+  return palabras.join(' ');
+  
 }
 
 
@@ -92,7 +87,8 @@ function agregarNumeros(numeros) {
     sumarNumeros=0;
     for(i=0; i<numeros.length; i++){
     sumarNumeros+=numeros[i];
-    }  console.log(sumarNumeros);
+    }  
+    return sumarNumeros;
 }
 
 
@@ -103,7 +99,8 @@ function promedioResultadosTest(resultadosTest) {
   sumarNumeros=0;
     for(i=0; i<resultadosTest.length; i++){
     sumarNumeros+=resultadosTest[i];
-    }  console.log(sumarNumeros/resultadosTest.length);
+    }  
+    return sumarNumeros/resultadosTest.length;
 
 }
 
@@ -140,12 +137,13 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-count=1;
+count=0;
   for(i=0; i<arreglo.length; i++){
   if(arreglo[i] > 18){
     count++;
   }
-}return count;
+}
+return count;
 }
 
 
@@ -154,10 +152,10 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
- if(numeroDeDia<=6 && numeroDeDia>1){
-   console.log('Es dia laboral');
-  }else if(numeroDeDia===1 || numeroDeDia===7){
-    console.log('Es fin de semana');
+ if(numeroDeDia===1 || numeroDeDia===7){
+   return 'Es fin de semana';
+  }else { 
+    return 'Es dia Laboral';
   }
 }
 
@@ -193,13 +191,13 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
- newArray=[];
- for(i=0; i<array.length; i++){
+ var newArray=[];
+ for(let i=0; i<array.length; i++){
    if (array[i]==='Enero'|| array[i]==='Marzo'|| array[i]==='Noviembre'){
      newArray.push(array[i]);
    }
  }if(newArray.length<3){
-   return 'No se encontraron los meses perdidos';
+   return 'No se encontraron los meses pedidos';
  }else{
    return newArray;
  }
@@ -228,17 +226,21 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  newArray=[];
-  sumNewArray=0;
-  for(i=0; i<10; i++){
-    numero+=2;
-    newArray.push(numero);
-    sumNewArray+=numero;
-    if(sumNewArray===i){
-      console.log("Se interrumpio la ejecucion");
-      break;
+  var newArray=[];
+  var numeroMasDos=numero;
+  for(var i=0; i<10; i++){
+    numeroMasDos+=2;
+    if(numeroMasDos===i) break;
+    else{
+      newArray.push(numeroMasDos);
     }
-  }return newArray;
+  }
+  if(i<10){
+    return 'Se interrumpió la ejecución';
+  }
+  else{
+    return newArray;
+  }
 }
 
 

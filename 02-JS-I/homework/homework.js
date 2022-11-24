@@ -140,7 +140,7 @@ function elevarAlCuadrado(num) {
   // ojo: No es raiz cuadrada!
   // Tu código:
   
-  return math.paw(num,2);
+  return Math.pow(num,2);
 }
 
 function elevarAlCubo(num) {
@@ -152,7 +152,7 @@ function elevarAlCubo(num) {
 function elevar(num, exponent) {
   // Devuelve el valor de "num" elevado al exponente dado en "exponent"
   // Tu código:
-  return math.pow(num, exponent);
+  return Math.pow(num, exponent);
 }
 
 function redondearNumero(num) {
@@ -179,11 +179,11 @@ function esPositivo(numero) {
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
   if(numero>0){
-    return "es positivo";
+    return "Es positivo";
   } else if (numero === 0){
     return false;
   } else{
-    return "es negativo";
+    return "Es negativo";
   }
 }
 
@@ -198,7 +198,7 @@ function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código:
-  return nombre + '' + apellido;
+  return nombre + ' ' + apellido;
 }
 
 function obtenerSaludo(nombre) {
@@ -251,7 +251,7 @@ function esVocal(letra){
     return "Dato incorrecto";
   }
   if((letra==='a') || (letra ==='e') || (letra==='i') || (letra ==='o') || (letra==='u') ) {
-      return "es vocal";
+      return "Es vocal";
   }else {
     return "Dato incorrecto";
   }
